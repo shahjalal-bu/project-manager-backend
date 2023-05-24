@@ -15,7 +15,9 @@ module.exports.create = async (req, res) => {
 //find all data
 module.exports.findAll = async (req, res) => {
   try {
-    const getData = await projectService.findAll().populate("teammembers","members -_id");
+    const getData = await projectService
+      .findAll()
+      .populate("teammembers", "members -_id");
     return res.status(200).json(getData);
   } catch (e) {
     console.error(e);
@@ -36,15 +38,16 @@ module.exports.getById = async (req, res) => {
   }
 };
 //find one and update
-module.exports.findOneAndUpdate = async (req, res) => {
+module.exports.findAndUpdate = async (req, res) => {
   try {
-    const fetchedById = await projectService.findOneAndUpdate(req);
+    const fetchedById = await projectService.findAndUpdate(req);
     return res.status(200).json(fetchedById);
   } catch (e) {
     console.error(e);
     return res.status(400).json(e);
   }
 };
+
 //find one and delete
 module.exports.findAndDelete = async (req, res) => {
   try {

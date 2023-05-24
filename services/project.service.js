@@ -9,11 +9,10 @@ module.exports.findAll = () => {
   return Project.find();
 };
 
-// //find and update
-
-// module.exports.findAndUpdate = async (req) => {
-//   console.log(req.body);
-//   const filter = { _id: req.params.ProjectId };
-//   const update = { members: req.body.member };
-//   return Project.findOneAndUpdate(filter, { $push: update });
-// };
+//update column name
+module.exports.findAndUpdate = async (req) => {
+  console.log(req);
+  const filter = { _id: req.params.projectId };
+  const update = { column: req.body.column };
+  return Project.findOneAndUpdate(filter, update);
+};

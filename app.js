@@ -13,10 +13,7 @@ const teamRouter = require("./routes/team");
 const projectRouter = require("./routes/project");
 
 const app = express();
-// const corsOptions = {
-//   origin: "http://localhost:3000",
-//   methods: ["GET", "POST"],
-// };
+
 app.use(cors());
 
 // app.use(logger("dev"));
