@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 const projectSchema = new Schema(
   {
+    createdAt: Date,
     projectName: {
       type: String,
       required: true,

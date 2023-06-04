@@ -1,0 +1,46 @@
+{
+    "editor.inlineSuggest.enabled": true,
+    "workbench.colorTheme": "Dracula",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.fontSize": 18,
+    "editor.wordWrap": "on",
+    "github.copilot.enable": {
+      "*": false,
+      "yaml": false,
+      "plaintext": false,
+      "markdown": false
+    },
+    "editor.formatOnSave": true,
+    "files.autoSave": "afterDelay",
+    "editor.linkedEditing": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "[javascriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "emmet.includeLanguages": {
+      "javascript": "javascriptreact",
+      "typescript": "typescriptreact"
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "git.enableSmartCommit": true,
+    "hediet.vscode-drawio.resizeImages": null,
+    "tabnine.experimentalAutoImports": true,
+    "git.openRepositoryInParentFolders": "never",
+    "security.workspace.trust.untrustedFiles": "open",
+    "tailwind-fold.autoFold": false,
+    "redhat.telemetry.enabled": true
+  }
+  
