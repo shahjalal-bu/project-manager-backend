@@ -14,11 +14,21 @@ module.exports.create = async (req, res) => {
 
 //find all data
 module.exports.findAll = async (req, res) => {
+  console.log(req.query);
   try {
-    const getData = await projectService
+    const projects = await projectService
       .findAll()
-      .populate("teammembers", "members -_id");
-    return res.status(200).json(getData);
+      .populate({
+        path: "teammembers",
+        select: "members",
+      })
+      .lean();
+    const modifiedProjects = projects.map((project) => {
+      if (!project.teammembers[0].members.includes(req.query.email)) return [];
+      project.teammembers = project.teammembers[0].members;
+      return project;
+    });
+    return res.status(200).json(modifiedProjects);
   } catch (e) {
     console.error(e);
     return res.status(400).json(e);

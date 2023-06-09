@@ -6,6 +6,7 @@ const projectController = require("../controllers/project.controller");
 router.post("/", projectController.create);
 router.get("/", projectController.findAll);
 router.patch("/:projectId", projectController.findAndUpdate);
+router.delete("/:projectId", projectController.findAndDelete);
 // router.post("/login", userController.login)
 
 module.exports = router;

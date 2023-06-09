@@ -5,8 +5,10 @@ module.exports.create = (data) => {
 };
 
 //find all team
-module.exports.findAll = () => {
-  return Team.find();
+module.exports.findAll = (req) => {
+  return Team.find({
+    members: { $in: [req.query.email] },
+  });
 };
 
 //find and update
@@ -16,4 +18,9 @@ module.exports.findAndUpdate = async (req) => {
   const filter = { _id: req.params.teamId };
   const update = { members: req.body.member };
   return Team.findOneAndUpdate(filter, { $push: update });
+};
+
+//delete a team
+module.exports.findAndDelete = async (req) => {
+  return Team.findOneAndDelete(req.params.teamId);
 };

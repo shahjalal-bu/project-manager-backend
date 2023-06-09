@@ -19,10 +19,18 @@ const projectSchema = new Schema(
       type: String,
       required: true,
     },
-    teammembers: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Team",
+    createorPhoto: {
+      type: String
     },
+    teamName: {
+      type: String,
+      required: true,
+    },
+    teamColor: {
+      type: String,
+      required: true,
+    },
+    teammembers: [{ type: mongoose.Schema.Types.ObjectId, ref: "Team" }],
   },
   {
     timestamps: true,

@@ -1,6 +1,7 @@
 const teamService = require("../services/team.service");
 
 module.exports.create = async (req, res) => {
+  console.log(req.body);
   try {
     const team = await teamService.create(req.body);
     return res.status(200).json(team);
@@ -15,7 +16,7 @@ module.exports.create = async (req, res) => {
 //find all data
 module.exports.findAll = async (req, res) => {
   try {
-    const getData = await teamService.findAll();
+    const getData = await teamService.findAll(req);
     return res.status(200).json(getData);
   } catch (e) {
     console.error(e);
